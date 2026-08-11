@@ -6,6 +6,7 @@
 
 @theme {
   --font-display: "Oswald", "Arial Narrow", sans-serif;
+  --font-hero: "Anton", "Oswald", sans-serif;
   --font-sans: "Work Sans", system-ui, sans-serif;
   --font-mono: "JetBrains Mono", ui-monospace, monospace;
   --color-ink: oklch(0.21 0.008 60);
