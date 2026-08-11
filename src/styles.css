@@ -4,6 +4,41 @@
 
 @custom-variant dark (&:is(.dark *));
 
+@theme {
+  --font-display: "Oswald", "Arial Narrow", sans-serif;
+  --font-sans: "Work Sans", system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, monospace;
+  --color-ink: oklch(0.21 0.008 60);
+  --color-panel: oklch(0.26 0.012 78);
+  --color-panel-2: oklch(0.29 0.015 80);
+  --color-bone: oklch(0.92 0.017 82);
+  --color-paper: oklch(0.96 0.015 85);
+  --color-gold: oklch(0.71 0.107 79);
+  --color-gold-bright: oklch(0.79 0.106 82);
+  --color-oxblood: oklch(0.4 0.11 27);
+  --color-oxblood-br: oklch(0.47 0.128 27);
+  --color-steel: oklch(0.68 0.014 90);
+  --color-steel-dark: oklch(0.45 0.02 92);
+}
+
+@utility hours-bar {
+  background: linear-gradient(
+    90deg,
+    var(--color-gold-bright) 0%,
+    var(--color-gold) 22%,
+    var(--color-oxblood-br) 52%,
+    var(--color-panel) 82%,
+    var(--color-ink) 100%
+  );
+}
+
+@utility section-label {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+}
+
 /*
  * Design system definition.
  *
