@@ -1,7 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { Clock, Instagram, Mail, MapPin, Phone } from "lucide-react";
 import { PageShell } from "@/components/site/PageShell";
-import gym1 from "@/assets/gym-1.png.asset.json";
+import { gymFloorBlue } from "@/assets/images";
 
 export const Route = createFileRoute("/contact")({
   head: () => ({
@@ -91,10 +91,10 @@ function Contact() {
 
         <div className="flex flex-col gap-6">
           <img
-            src={gym1.url}
+            src={gymFloorBlue}
             alt="Inside Leo Warriors: racks, benches and cable machines under blue lighting"
             loading="lazy"
-            className="h-72 w-full object-cover"
+            className="h-72 w-full object-cover rounded shadow"
           />
           <div className="border border-ink/12 p-8">
             <h2 className="font-display text-2xl uppercase tracking-wide">Getting here</h2>

@@ -1,6 +1,6 @@
 import { Link } from "@tanstack/react-router";
 import { Instagram, Mail, MapPin, Phone } from "lucide-react";
-import logo from "@/assets/logo.png.asset.json";
+import logo from "@/assets/logo";
 
 export function SiteFooter() {
   return (
@@ -10,7 +10,7 @@ export function SiteFooter() {
         <div>
           <div className="flex items-center gap-3">
             <img
-              src={logo.url}
+              src={logo}
               alt="Leo Warriors logo"
               className="h-12 w-12 rounded-full object-cover ring-1 ring-gold/40"
             />

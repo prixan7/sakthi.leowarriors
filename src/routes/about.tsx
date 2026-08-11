@@ -1,8 +1,11 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { PageShell } from "@/components/site/PageShell";
 import { CtaBand } from "@/components/site/CtaBand";
-import gym2 from "@/assets/gym-2.png.asset.json";
-import gym3 from "@/assets/gym-3.png.asset.json";
+import {
+  gymCardioWall,
+  gymTreadmills,
+  coachSakthi,
+} from "@/assets/images";
 
 export const Route = createFileRoute("/about")({
   head: () => ({
@@ -80,10 +83,10 @@ function About() {
           </figure>
         </div>
         <img
-          src={gym2.url}
+          src={gymCardioWall}
           alt="Cardio machines and weight plate rack along the motivation wall at Leo Warriors"
           loading="lazy"
-          className="h-full max-h-[30rem] w-full object-cover"
+          className="h-full max-h-[30rem] w-full object-cover rounded shadow-lg"
         />
       </section>
 
@@ -91,29 +94,35 @@ function About() {
         <div className="mx-auto max-w-6xl px-5">
           <p className="section-label text-gold">Coaches</p>
           <h2 className="mt-3 font-display text-3xl uppercase tracking-wide text-paper md:text-4xl">
-            Two coaches, both on the floor
+            Coaches on the floor
           </h2>
-          <div className="mt-10 grid gap-6 md:grid-cols-2">
-            {[
-              {
-                name: "Sakthi",
-                role: "Founder & Head Coach",
-                body: "Runs the programming for strength and physique members and does most of the hands-on form correction. If you are unsure about a lift, he is the person to ask.",
-              },
-              {
-                name: "Thiru",
-                role: "Strength & Conditioning Coach",
-                body: "Handles early-morning and beginner batches, along with conditioning and aerobics sessions. Good at easing in members who have never trained before.",
-              },
-            ].map((c) => (
-              <article key={c.name} className="border border-white/10 bg-ink p-8">
+          <div className="mt-10 grid gap-8 md:grid-cols-2">
+            <article className="border border-white/10 bg-ink p-8 flex flex-col md:flex-row gap-6 items-center">
+              <img
+                src={coachSakthi}
+                alt="Head Coach Sakthi"
+                className="h-44 w-44 rounded object-cover border-2 border-gold shrink-0"
+              />
+              <div>
                 <h3 className="font-display text-2xl uppercase tracking-wide text-paper">
-                  {c.name}
+                  Sakthi
                 </h3>
-                <p className="section-label mt-1 text-gold">{c.role}</p>
-                <p className="mt-4 text-sm leading-relaxed text-bone/80">{c.body}</p>
-              </article>
-            ))}
+                <p className="section-label mt-1 text-gold">Founder & Head Coach</p>
+                <p className="mt-4 text-sm leading-relaxed text-bone/80">
+                  Runs the programming for strength and physique members and does hands-on form correction. If you are unsure about a lift, he is the person to ask.
+                </p>
+              </div>
+            </article>
+
+            <article className="border border-white/10 bg-ink p-8">
+              <h3 className="font-display text-2xl uppercase tracking-wide text-paper">
+                Thiru
+              </h3>
+              <p className="section-label mt-1 text-gold">Strength & Conditioning Coach</p>
+              <p className="mt-4 text-sm leading-relaxed text-bone/80">
+                Handles early-morning and beginner batches, along with conditioning and aerobics sessions. Good at easing in members who have never trained before.
+              </p>
+            </article>
           </div>
         </div>
       </section>
@@ -140,10 +149,10 @@ function About() {
             <p className="mt-2 font-mono text-sm text-ink">Ladies timing · 10:00 – 15:00</p>
           </div>
           <img
-            src={gym3.url}
+            src={gymTreadmills}
             alt="Treadmill row and turf walkway inside the air-conditioned floor"
             loading="lazy"
-            className="h-64 w-full object-cover md:h-full"
+            className="h-64 w-full object-cover rounded shadow md:h-full"
           />
         </div>
       </section>

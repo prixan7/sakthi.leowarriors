@@ -1,12 +1,14 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { PageShell } from "@/components/site/PageShell";
 import { CtaBand } from "@/components/site/CtaBand";
-import gym1 from "@/assets/gym-1.png.asset.json";
-import gym2 from "@/assets/gym-2.png.asset.json";
-import gym3 from "@/assets/gym-3.png.asset.json";
-import gym4 from "@/assets/gym-4.jpg.asset.json";
-import gym5 from "@/assets/gym-5.jpg.asset.json";
-import gym6 from "@/assets/gym-6.jpg.asset.json";
+import logo from "@/assets/logo";
+import {
+  heroBg,
+  gymFloorBlue,
+  gymCardioWall,
+  gymTreadmills,
+  coachSakthi,
+} from "@/assets/images";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -55,8 +57,8 @@ const programs = [
   },
   {
     n: "06",
-    title: "Kids Dance Classes",
-    body: "Coached dance sessions for children, run in the hall during off-peak hours.",
+    title: "Personal Coaching",
+    body: "1-on-1 hands on form correction and custom training programming by Coach Sakthi.",
   },
 ];
 
@@ -84,12 +86,17 @@ function Index() {
       {/* Hero */}
       <section className="relative bg-ink">
         <img
-          src={gym5.url}
-          alt="Leo Warriors training floor with machines, benches and blue accent lighting"
-          className="absolute inset-0 h-full w-full object-cover opacity-40"
+          src={heroBg}
+          alt="Leo Warriors heavy power rack strength training floor"
+          className="absolute inset-0 h-full w-full object-cover opacity-50 contrast-125"
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-ink via-ink/70 to-ink/40" />
+        <div className="absolute inset-0 bg-gradient-to-t from-ink via-ink/75 to-ink/40" />
         <div className="relative mx-auto flex min-h-[78vh] max-w-5xl flex-col items-center justify-center px-5 py-24 text-center">
+          <img
+            src={logo}
+            alt="Leo Warrior Logo"
+            className="mb-4 h-28 w-28 rounded-full object-cover shadow-2xl ring-2 ring-gold/60 sm:h-36 sm:w-36"
+          />
           <p className="section-label text-gold">Thirumazhisai · Chennai</p>
           <h1 className="mt-6 font-hero text-5xl uppercase leading-[0.92] tracking-[0.02em] text-paper sm:text-7xl md:text-8xl">
             Train like a<span className="block text-gold">warrior</span>
@@ -168,24 +175,45 @@ function Index() {
         <div className="mx-auto max-w-6xl px-5">
           <p className="section-label text-oxblood">The floor</p>
           <h2 className="mt-3 max-w-2xl font-display text-3xl uppercase tracking-wide md:text-4xl">
-            Photographed as it is, on a normal day
+            Real photos from our training floor
           </h2>
-          <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+          <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
             {[
-              { src: gym2.url, alt: "Cardio row with treadmills beside the graffiti motivation wall" },
-              { src: gym3.url, alt: "Treadmills, cross trainers and weight plates along the turf walkway" },
-              { src: gym1.url, alt: "Benches, cable stack and squat rack under blue accent lighting" },
-              { src: gym4.url, alt: "Dumbbell racks and benches along the mirrored wall" },
-              { src: gym6.url, alt: "Group aerobics class in the air-conditioned hall" },
-              { src: gym5.url, alt: "Member working through a heavy barbell squat set" },
+              {
+                src: gymFloorBlue,
+                alt: "Main gym floor with cable crossover, benches and blue LED lighting",
+                title: "Main Training Floor",
+              },
+              {
+                src: gymCardioWall,
+                alt: "Motivation wall, leg press machine and green turf runway",
+                title: "Motivation & Leg Zone",
+              },
+              {
+                src: gymTreadmills,
+                alt: "Treadmill row along the green turf walkway",
+                title: "Cardio & Turf Walkway",
+              },
+              {
+                src: coachSakthi,
+                alt: "Head Coach Sakthi on the gym floor",
+                title: "Head Coach Sakthi",
+              },
             ].map((img) => (
-              <figure key={img.alt} className="overflow-hidden">
-                <img
-                  src={img.src}
-                  alt={img.alt}
-                  loading="lazy"
-                  className="h-72 w-full object-cover grayscale-[15%] transition duration-500 hover:grayscale-0"
-                />
+              <figure key={img.title} className="group overflow-hidden rounded bg-panel shadow-md">
+                <div className="overflow-hidden">
+                  <img
+                    src={img.src}
+                    alt={img.alt}
+                    loading="lazy"
+                    className="h-80 w-full object-cover transition duration-500 group-hover:scale-105"
+                  />
+                </div>
+                <figcaption className="p-4 bg-ink text-center">
+                  <p className="font-display text-sm uppercase tracking-wider text-gold">
+                    {img.title}
+                  </p>
+                </figcaption>
               </figure>
             ))}
           </div>
