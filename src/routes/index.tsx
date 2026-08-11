@@ -4,6 +4,9 @@ import { CtaBand } from "@/components/site/CtaBand";
 import gym1 from "@/assets/gym-1.png.asset.json";
 import gym2 from "@/assets/gym-2.png.asset.json";
 import gym3 from "@/assets/gym-3.png.asset.json";
+import gym4 from "@/assets/gym-4.jpg.asset.json";
+import gym5 from "@/assets/gym-5.jpg.asset.json";
+import gym6 from "@/assets/gym-6.jpg.asset.json";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -81,55 +84,33 @@ function Index() {
       {/* Hero */}
       <section className="relative bg-ink">
         <img
-          src={gym1.url}
+          src={gym5.url}
           alt="Leo Warriors training floor with machines, benches and blue accent lighting"
-          className="absolute inset-0 h-full w-full object-cover opacity-30"
+          className="absolute inset-0 h-full w-full object-cover opacity-40"
         />
-        <div className="relative mx-auto grid max-w-6xl gap-12 px-5 py-20 md:grid-cols-[1.35fr_1fr] md:py-28">
-          <div>
-            <p className="section-label text-gold">Thirumazhisai · Chennai 600124</p>
-            <h1 className="mt-5 font-display text-4xl uppercase leading-[1.05] tracking-wide text-paper sm:text-5xl md:text-6xl">
-              Strength is built
-              <br />
-              one rep at a time.
-            </h1>
-            <p className="mt-6 max-w-xl leading-relaxed text-bone/85">
-              An air-conditioned unisex training floor with free weights, machines and cardio, and
-              coaches who stay on the floor with you. Walk in any day between 5 AM and 10 PM.
-            </p>
-            <div className="mt-8 flex flex-wrap gap-3">
-              <Link
-                to="/contact"
-                className="bg-gold px-7 py-4 font-display text-sm uppercase tracking-[0.18em] text-ink transition-colors hover:bg-gold-bright"
-              >
-                Get a free trial session
-              </Link>
-              <a
-                href="tel:+919092345230"
-                className="border border-bone/30 px-7 py-4 font-display text-sm uppercase tracking-[0.18em] text-paper transition-colors hover:border-gold hover:text-gold"
-              >
-                Call the gym
-              </a>
-            </div>
+        <div className="absolute inset-0 bg-gradient-to-t from-ink via-ink/70 to-ink/40" />
+        <div className="relative mx-auto flex min-h-[78vh] max-w-5xl flex-col items-center justify-center px-5 py-24 text-center">
+          <p className="section-label text-gold">Thirumazhisai · Chennai</p>
+          <h1 className="mt-6 font-hero text-5xl uppercase leading-[0.92] tracking-[0.02em] text-paper sm:text-7xl md:text-8xl">
+            Train like a<span className="block text-gold">warrior</span>
+          </h1>
+          <p className="mt-6 font-mono text-xs uppercase tracking-[0.3em] text-bone/70">
+            A/C unisex gym · 5 AM – 10 PM
+          </p>
+          <div className="mt-10 flex flex-wrap justify-center gap-3">
+            <Link
+              to="/contact"
+              className="bg-gold px-8 py-4 font-display text-sm uppercase tracking-[0.18em] text-ink transition-colors hover:bg-gold-bright"
+            >
+              Free trial session
+            </Link>
+            <a
+              href="tel:+919092345230"
+              className="border border-bone/30 px-8 py-4 font-display text-sm uppercase tracking-[0.18em] text-paper transition-colors hover:border-gold hover:text-gold"
+            >
+              Call the gym
+            </a>
           </div>
-
-          <aside className="self-start border border-white/12 bg-panel/85 p-7 backdrop-blur">
-            <h2 className="section-label text-gold">At a glance</h2>
-            <dl className="mt-5 divide-y divide-white/10">
-              {[
-                ["Open", "Every day · 05:00 – 22:00"],
-                ["Ladies timing", "10:00 – 15:00"],
-                ["Google rating", "4.7 / 5 · 100+ reviews"],
-                ["Facility", "Air-conditioned, unisex"],
-                ["Landmark", "Near Thirumazhisai Post Office"],
-              ].map(([k, v]) => (
-                <div key={k} className="flex flex-col gap-1 py-3">
-                  <dt className="section-label text-steel">{k}</dt>
-                  <dd className="font-mono text-sm text-paper">{v}</dd>
-                </div>
-              ))}
-            </dl>
-          </aside>
         </div>
         <div className="hours-bar h-2 w-full" />
         <div className="mx-auto flex max-w-6xl justify-between px-5 py-2 font-mono text-[0.65rem] uppercase tracking-[0.2em] text-steel">
@@ -137,6 +118,23 @@ function Index() {
           <span className="hidden sm:inline">10:00 – 15:00 ladies</span>
           <span>22:00 close</span>
         </div>
+      </section>
+
+      {/* At a glance strip */}
+      <section className="border-b border-ink/10 bg-paper">
+        <dl className="mx-auto grid max-w-6xl grid-cols-2 gap-px bg-ink/10 px-0 md:grid-cols-4">
+          {[
+            ["Open daily", "05:00 – 22:00"],
+            ["Ladies timing", "10:00 – 15:00"],
+            ["Google rating", "4.7 / 5 · 100+"],
+            ["Facility", "A/C · Unisex"],
+          ].map(([k, v]) => (
+            <div key={k} className="bg-paper px-5 py-6">
+              <dt className="section-label text-steel-dark">{k}</dt>
+              <dd className="mt-2 font-display text-lg uppercase tracking-wide">{v}</dd>
+            </div>
+          ))}
+        </dl>
       </section>
 
       {/* Programs */}
@@ -172,11 +170,14 @@ function Index() {
           <h2 className="mt-3 max-w-2xl font-display text-3xl uppercase tracking-wide md:text-4xl">
             Photographed as it is, on a normal day
           </h2>
-          <div className="mt-10 grid gap-4 md:grid-cols-3">
+          <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
             {[
               { src: gym2.url, alt: "Cardio row with treadmills beside the graffiti motivation wall" },
               { src: gym3.url, alt: "Treadmills, cross trainers and weight plates along the turf walkway" },
               { src: gym1.url, alt: "Benches, cable stack and squat rack under blue accent lighting" },
+              { src: gym4.url, alt: "Dumbbell racks and benches along the mirrored wall" },
+              { src: gym6.url, alt: "Group aerobics class in the air-conditioned hall" },
+              { src: gym5.url, alt: "Member working through a heavy barbell squat set" },
             ].map((img) => (
               <figure key={img.alt} className="overflow-hidden">
                 <img
