@@ -86,7 +86,7 @@ export function SiteFooter() {
       </div>
       <div className="border-t border-white/10 px-5 py-5">
         <p className="mx-auto max-w-6xl font-mono text-xs text-steel-dark">
-          © {new Date().getFullYear()} Leo Warriors · Open daily 05:00–22:00 · Ladies timing
+          Developed by GenZify Agency · Open daily 05:00–22:00 · Ladies timing
           10:00–15:00
         </p>
       </div>
